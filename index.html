@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Story</title>
+
+<style>
+
+/* BODY */
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#0b0b0b;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* 🌌 STARS */
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:transparent;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.stars span{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:0.2;}
+    to{opacity:1;}
+}
+
+/* LOCK */
+#lockScreen{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#0b0b0b;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+}
+
+/* HEADER */
+.header{
+    padding:40px;
+    text-align:center;
+    background:linear-gradient(#1db954,#0b0b0b);
+}
+
+/* TYPING TEXT */
+#typing{
+    font-size:18px;
+    color:#ccc;
+    margin-top:10px;
+}
+
+/* TIMELINE */
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+    position:relative;
+}
+
+.container::before{
+    content:"";
+    position:absolute;
+    left:20px;
+    width:3px;
+    height:100%;
+    background:#1db954;
+}
+
+/* MEMORY */
+.memory{
+    background:#181818;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:30px;
+    margin-left:40px;
+    position:relative;
+    opacity:0;
+    transform:translateY(30px);
+    transition:0.6s;
+}
+
+.memory.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.memory::before{
+    content:"";
+    position:absolute;
+    left:-30px;
+    top:20px;
+    width:15px;
+    height:15px;
+    background:#1db954;
+    border-radius:50%;
+}
+
+.memory img{
+    width:100%;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+.title{
+    color:#1db954;
+    font-size:20px;
+}
+
+.date{
+    opacity:0.6;
+    margin-bottom:10px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:#1db954;
+    color:white;
+    margin-top:10px;
+}
+
+input{
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🌌 STARS -->
+<div class="stars" id="stars"></div>
+
+<!-- 🎶 MUSIC -->
+<audio id="music" loop>
+    <source src="YOUR-MUSIC-LINK.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🔒 LOCK -->
+<div id="lockScreen">
+    <h2>💚 Enter Password</h2>
+    <input type="password" id="pass">
+    <button onclick="unlock()">Open</button>
+</div>
+
+<div id="mainContent" style="display:none;">
+
+<div class="header">
+<h1>Our Story 💚</h1>
+<div id="typing"></div>
+</div>
+
+<div class="container">
+
+<!-- 1 -->
+<div class="memory">
+<div class="title">🌸 The First Conversation</div>
+<div class="date">25 Sept</div>
+<p>We were in the same batch for so long… attending the same classes, being around the same people… but somehow, we never really talked. It’s strange how two people can be so close physically and still feel like strangers. Then fest happened. You joined our music band as a singer, and that’s when we had our first real conversation. It wasn’t anything dramatic… just normal talking, normal interaction. But looking back now, that small moment feels so important. Because that’s where everything started—quietly, without either of us realizing what it would turn into.</p>
+</div>
+
+<!-- 2 -->
+<div class="memory">
+<div class="title">🏸 Coincidence… or Something More?</div>
+<div class="date">10 Oct</div>
+<p>I was just randomly asking people to be my badminton partner… no expectations, no planning. And you were the first one to say yes—almost instantly. It wasn’t like you were super into the sport or anything, but you still showed up, stayed there, played with me, and most importantly… supported me. You came to watch my matches, cheered for me, stood there like it actually mattered. And I remember feeling genuinely happy seeing you there. At that time, I brushed it off as just coincidence. But now it feels like one of those moments that was meant to happen.</p>
+</div>
+
+<!-- 3 -->
+<div class="memory">
+<div class="title">🎧 When We Actually Started Talking</div>
+<div class="date">12 Oct</div>
+<p>Around the sports days, something shifted. We didn’t just know each other anymore—we started talking. Properly. Naturally. Conversations didn’t feel forced or new. There was no awkwardness, no hesitation… it just flowed. And the weird part was—it felt familiar. Like I had known you for much longer than I actually had. That’s when talking to you stopped being just “normal” and started becoming something I looked forward to every day.</p>
+</div>
+
+<!-- 4 -->
+<div class="memory">
+<div class="title">🖤 All Black Night</div>
+<div class="date">17 Oct</div>
+<p>That night is still one of the clearest memories I have. Everything was happening at once—music, chaos, lights, people… but somehow, all I remember is you. We were both dressed in black, and you looked unreal. There were so many photos, so many small interactions… but what stayed with me was how we were just together the whole time. Giving you my black shacket because it was cold felt like such a small thing… but it felt right. Natural. Somewhere between all that noise and excitement, something quietly changed inside me. I didn’t say it then… but I felt it.</p>
+</div>
+
+<!-- 5 -->
+<div class="memory">
+<div class="title">💃 Blue Saree Night</div>
+<div class="date">17 Oct</div>
+<p>And then you came in that blue saree… I don’t think I’ve ever seen someone look that beautiful. Not just because of what you were wearing, but because of how effortlessly you carried yourself. We spent hours together that night—talking, laughing, just being around each other. Time felt weirdly fast… like everything was happening too quickly but still perfectly. That night didn’t feel like just another event. It felt like something I’d remember for a long time.</p>
+</div>
+
+<!-- 6 -->
+<div class="memory">
+<div class="title">🔥 Fashion Show & DJ Night</div>
+<div class="date">18 Oct</div>
+<p>That day was chaos… but the good kind. You in that white-pink outfit… and then later in red… honestly, I didn’t even know what to say. I just kept noticing you again and again. And the funny part? We kept matching without even planning it. We roamed around the whole night with everyone—playing, laughing, doing random things… but somehow, we always ended up together. Even in a crowd, it felt like it was just you and me.</p>
+</div>
+
+<!-- 7 -->
+<div class="memory">
+<div class="title">🎭 That One Night We Got Paired</div>
+<div class="date">18 Oct</div>
+<p>Out of everyone there, we somehow ended up paired together. And that small thing changed everything a little. We talked… properly. Not just surface-level conversations, but the kind where you start understanding each other. That night felt different. Not loud or chaotic—just meaningful in a quiet way. I didn’t say it out loud… but I knew something was building.</p>
+</div>
+
+<!-- 8 -->
+<div class="memory">
+<div class="title">🏸 After the Break, It Became Us</div>
+<div class="date">4 Nov</div>
+<p>After the break, things didn’t go back to how they were before. They became something else. We started spending time together almost every day—badminton, walking, random conversations, constant texting. It slowly turned into “us” in everything. I kept telling myself you were just friendly… just extroverted… but deep down, I knew it didn’t feel normal anymore.</p>
+</div>
+
+<!-- 9 -->
+<div class="memory">
+<div class="title">🧠 The Realization</div>
+<div class="date">18 Nov</div>
+<p>I started noticing the little things. The way you reacted to certain situations. The way you cared. The way you got a little jealous sometimes. I won’t lie—I even created situations just to understand what you felt. And slowly, everything started making sense. There was something real between us… and I knew it.</p>
+</div>
+
+<!-- 10 -->
+<div class="memory">
+<div class="title">❤️ The Confession</div>
+<div class="date">28 Nov</div>
+<p>You were the one who said it first. Maybe you weren’t completely sure in that moment… but you still chose to say it. And that’s what made it special. It wasn’t dramatic. It wasn’t perfectly planned. It was just real. And it meant everything.</p>
+</div>
+
+<!-- 11 -->
+<div class="memory">
+<div class="title">💞 The Beginning of Us</div>
+<div class="date">29 Nov</div>
+<p>This is where everything became official—us. No more guessing, no more confusion. Just you and me. And the surprising part was… it didn’t feel overwhelming. It felt calm. Like this was exactly where I was meant to be.</p>
+</div>
+
+<!-- 12 -->
+<div class="memory">
+<div class="title">🤝 First Hand Hold</div>
+<div class="date">1 Dec</div>
+<p>That moment was simple… but it changed everything. You asked so innocently, and when our hands finally met… it felt different. Your hands were cold, mine were warm… but somehow they fit perfectly. Walking like that around campus, quietly hoping no one notices… felt like we had our own little world.</p>
+</div>
+
+<!-- 13 -->
+<div class="memory">
+<div class="title">🤍 First Hug</div>
+<div class="date">1 Dec</div>
+<p>That hug… I still remember it clearly. It wasn’t planned, it just happened. For a moment, everything went quiet. And in that silence, I realized how much I liked being close to you. It felt safe. Warm. Real.</p>
+</div>
+<!-- 14 -->
+<div class="memory">
+<div class="title">🎧 Our First Little Chapter</div>
+<div class="date">4 Dec</div>
+<p>
+Our first real “date”… even though we never actually called it that.
+I had my badminton tournament, but somehow, bringing you along made it feel completely different.
+You weren’t just there—you were with me.
+Watching my matches with that excitement, supporting me like it actually mattered… it meant more than I showed.
+And then the little moments—playing badminton on the streets at night, laughing over nothing, trying to copy those random reels…
+Walking hand in hand under dim lights, like the world had slowed down just for us.
+It wasn’t anything grand.
+But somehow, it became one of the most special beginnings.
+</p>
+</div>
+
+<!-- 15 -->
+<div class="memory">
+<div class="title">🚌 That Bus Ride</div>
+<div class="date">4 Dec</div>
+<p>
+The bus was almost empty that night.
+Quiet, slow, peaceful.
+We sat together… not saying much, but not needing to either.
+You hugged me, and we held hands the whole way back.
+It was such a small moment… something anyone else would forget.
+But for me, it felt perfect.
+Like time paused just long enough for me to realize how much I liked being there with you.
+</p>
+</div>
+
+<!-- 16 -->
+<div class="memory">
+<div class="title">🍜 Sharing Everything</div>
+<div class="date">5 Dec</div>
+<p>
+The next day felt just as simple… and just as special.
+You were there again, watching my match like my own personal cheerleader.
+And then we shared food—chicken noodles, pasta… feeding each other, laughing like it was nothing.
+But those small moments didn’t feel small.
+They felt like the kind of memories that quietly become important later.
+That’s when I realized… I wanted more days like this, with you.
+</p>
+</div>
+
+<!-- 17 -->
+<div class="memory">
+<div class="title">🌙 The Quiet Evening</div>
+<div class="date">6 Dec</div>
+<p>
+That evening felt different from everything else.
+We walked into that usually crowded place… but it was completely silent.
+Almost like it was waiting for us.
+The guard teasing us, telling us to stay away from cameras…
+and both of us blushing for no reason—it felt so random, yet so real.
+We sat there, talking softly, holding hands, laughing quietly.
+It felt peaceful.
+Like the world outside didn’t exist for a while.
+Just you, me, and that moment.
+</p>
+</div>
+
+<!-- 18 -->
+<div class="memory">
+<div class="title">💋 Our First Kiss</div>
+<div class="date">6 Dec</div>
+<p>
+It wasn’t planned.
+It wasn’t something we talked about.
+It just… happened.
+We were already close, already holding each other…
+and when we looked at each other, something shifted.
+And then, our first kiss.
+Soft. Warm. Gentle.
+It felt unreal in the simplest way possible.
+Like time slowed down just enough for us to feel everything.
+</p>
+</div>
+
+<!-- 19 -->
+<div class="memory">
+<div class="title">💞 The Day After</div>
+<div class="date">7 Dec</div>
+<p>
+The next day felt different.
+Not awkward, not strange… just deeper.
+Like something had changed between us, and we both knew it.
+We met again, sat together, talked, stayed close…
+It wasn’t just excitement anymore.
+It felt like we were slowly becoming something real.
+</p>
+</div>
+
+<!-- 20 -->
+<div class="memory">
+<div class="title">🏠 A Day Just for Us</div>
+<div class="date">7 Dec</div>
+<p>
+That day wasn’t about going out or doing something big.
+It was just about being together.
+No distractions, no rush… just time.
+Staying close, talking, laughing, existing in the same space.
+Cuddling, kissing, hugging, into each other.
+It felt calm.
+Like being with you was enough.
+</p>
+</div>
+
+<!-- 21 -->
+<div class="memory">
+<div class="title">🛍️ Alpha 2 Evening</div>
+<div class="date">7 Dec</div>
+<p>
+After that, we stepped back into the normal world…
+Walking through Alpha 2, eating street food, just enjoying everything around us.
+I got you those jhumkas… such a small thing, but it felt special.
+And then dinner, and that cab ride back…
+Holding you close, not wanting the night to end.
+That feeling stayed.
+</p>
+</div>
+
+<!-- 22 -->
+<div class="memory">
+<div class="title">🍜 Random Day Out</div>
+<div class="date">15 Jan</div>
+<p>
+It wasn’t anything big.
+Just a casual day out with friends, good food, random laughs.
+But even in all that…
+Being around you made everything better.
+That’s when I realized—
+it’s not the place or the plan…
+it’s you.
+</p>
+</div>
+
+<!-- 23 -->
+<div class="memory">
+<div class="title">💭 Missing You</div>
+<div class="date">23 Jan</div>
+<p>
+When you went home, everything felt a little off.
+Days felt longer.
+Conversations felt incomplete.
+I didn’t realize how used to you I had become…
+until you weren’t there.
+Missing you wasn’t dramatic…
+it was quiet, constant, and real.
+</p>
+</div>
+
+<!-- 24 -->
+<div class="memory">
+<div class="title">💞 Finally, Again</div>
+<div class="date">11 Feb</div>
+<p>
+And then… finally seeing you again.
+It didn’t feel like a big moment on the outside.
+But inside, everything just settled.
+Like things went back to where they belonged.
+Being with you again felt… right.
+</p>
+</div>
+
+<!-- 25 -->
+<div class="memory">
+<div class="title">🌙 That Night Together</div>
+<div class="date">13 Feb</div>
+<p>
+That night felt different.
+Slower. Softer.
+No rush, no distractions… just you and me.
+Holding each other, staying close, not wanting to let go.
+It felt peaceful in a way I didn’t expect.
+Like everything was exactly where it should be.
+</p>
+</div>
+
+<!-- 26 -->
+<div class="memory">
+<div class="title">❤️ Valentine’s Day</div>
+<div class="date">14 Feb</div>
+<p>
+Valentine’s Day didn’t feel like something forced or planned.
+It felt natural… like just another day with you, but better.
+Walking around, trying outfits, laughing at random things, taking pictures…
+It wasn’t about where we went.
+It was about being there with you.
+And that made everything feel perfect.
+</p>
+</div>
+
+<!-- 27 -->
+<div class="memory">
+<div class="title">🎁 The Little Things</div>
+<div class="date">14 Feb</div>
+<p>
+The gifts we exchanged weren’t just things.
+They were effort, thought, pieces of us.
+The jersey, the handmade cards, the small details…
+Everything meant more because it came from you.
+It wasn’t about how big or small it was.
+It was about what it meant.
+</p>
+</div>
+
+<!-- 28 -->
+<div class="memory">
+<div class="title">🩺 Even From Far, Still With Me</div>
+<div class="date">29 March</div>
+<p>
+These days weren’t easy…
+Exams, distance, everything happening at once.
+And then my surgery…
+But even when you weren’t physically there, you were still with me.
+Through calls, messages, check-ins… every little thing.
+And then today—our 4 months.
+What you made for me wasn’t just a gift.
+It was meaning.
+The chick… you being with me.
+The octopus… keeping me strong.
+The football… reminding me to come back stronger.
+The donut… your cute way of caring.
+The flower… hope that doesn’t fade.
+I don’t think I’ll ever forget this.
+Not just because it’s our 4 months…
+but because it showed me how much you care.
+</p>
+</div>
+
+</div>
+</div>
+
+<script>
+
+/* 🔒 UNLOCK + MUSIC */
+function unlock(){
+    let p = document.getElementById("pass").value;
+    if(p === "1913"){
+        document.getElementById("lockScreen").style.display="none";
+        document.getElementById("mainContent").style.display="block";
+        document.getElementById("music").play();
+        typeText();
+    } else alert("Wrong password");
+}
+
+/* ⌨️ TYPING EFFECT */
+let text = "Every moment with you became a memory I never want to lose...";
+let i = 0;
+
+function typeText(){
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeText, 40);
+    }
+}
+
+/* 🌌 STARS GENERATOR */
+let starContainer = document.getElementById("stars");
+
+for(let i=0;i<100;i++){
+    let star = document.createElement("span");
+    star.style.top = Math.random()*100 + "%";
+    star.style.left = Math.random()*100 + "%";
+    star.style.animationDuration = (Math.random()*2+1)+"s";
+    starContainer.appendChild(star);
+}
+
+/* ✨ SCROLL ANIMATION */
+let cards = document.querySelectorAll(".memory");
+
+window.addEventListener("scroll", ()=>{
+    cards.forEach(card=>{
+        let top = card.getBoundingClientRect().top;
+        if(top < window.innerHeight - 50){
+            card.classList.add("show");
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>
